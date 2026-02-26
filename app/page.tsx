@@ -1,13 +1,18 @@
-import { Me } from "@/components/general/me";
+import { Me } from "@/components/portfolio/me";
 import { Separator } from "@/components/general/separator";
+import { Stack } from "@/components/portfolio/stack";
 
 export default function Home() {
   return (
     <main className="mx-auto md:max-w-3xl *:[[id]]:scroll-mt-22">
       <Me />
       <Separator />
+
+      <Stack />
+      <Separator />
+
       <section id="about" className="my-[100vh]">
-        <div className=" bg-blue-700">
+        <div className="bg-blue-700">
           <h2>About</h2>
         </div>
         <Separator />

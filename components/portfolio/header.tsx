@@ -3,7 +3,7 @@
 import { useScroll } from "@/hooks/use-scroll";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
-import { ThemeToggle } from "./theme-toggle";
+import { ThemeToggle } from "../general/theme-toggle";
 import { MobileNav } from "./mobile-nav";
 
 export const navLinks = [
