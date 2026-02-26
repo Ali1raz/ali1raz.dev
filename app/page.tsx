@@ -1,13 +1,16 @@
-import { Header } from "@/components/general/header";
+import { Me } from "@/components/general/me";
+import { Separator } from "@/components/general/separator";
 
 export default function Home() {
   return (
-    <div>
-      <Header />
+    <main className="mx-auto md:max-w-3xl *:[[id]]:scroll-mt-22">
+      <Me />
+      <Separator />
       <section id="about" className="my-[100vh]">
-        <div className="size-48 bg-blue-700">
+        <div className=" bg-blue-700">
           <h2>About</h2>
         </div>
+        <Separator />
       </section>
       <section id="projects" className="my-[100vh]">
         <div className="size-48 bg-pink-500">
@@ -19,6 +22,6 @@ export default function Home() {
           <h2>Contact</h2>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

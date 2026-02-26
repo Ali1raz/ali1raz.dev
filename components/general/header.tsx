@@ -30,7 +30,7 @@ export function Header() {
               <a href={link.href}>{link.name}</a>
             </Button>
           ))}
-
+          <div className="h-5 w-px bg-muted-foreground " />
           <ThemeToggle />
         </div>
         <div className="ml-auto flex items-center gap-2 md:hidden">
