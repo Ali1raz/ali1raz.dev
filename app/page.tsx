@@ -1,6 +1,8 @@
 import { Me } from "@/components/portfolio/me";
 import { Separator } from "@/components/general/separator";
 import { Stack } from "@/components/portfolio/stack";
+import { Footer } from "@/components/portfolio/footer";
+import { GitHubContributions } from "@/components/portfolio/gh-contributions";
 
 export default function Home() {
   return (
@@ -9,6 +11,7 @@ export default function Home() {
       <Separator />
 
       <Stack />
+      <GitHubContributions />
       <Separator />
 
       <section id="about" className="my-[100vh]">
@@ -27,6 +30,7 @@ export default function Home() {
           <h2>Contact</h2>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }

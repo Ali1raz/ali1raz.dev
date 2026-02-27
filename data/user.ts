@@ -5,4 +5,5 @@ export const USER = {
   pronouns: "he/him",
   bio: "Creating with code. Small details matter.",
   avatar: "https://avatars.githubusercontent.com/u/129389379?v=4",
+  github: "https://github.com/Ali1raz/",
 };
