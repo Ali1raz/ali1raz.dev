@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export function Me() {
   return (
-    <div className="flex sm:items-end-safe sm:flex-row flex-col items-start border-x border-edge mt-6 screen-line-after">
-      <div className="shrink-0 border border-edge">
+    <div className="flex sm:items-end-safe sm:flex-row flex-col items-start border-x border-t border-edge mt-6 screen-line-after">
+      <div className="shrink-0 border-r border-edge">
         <div className="relative mx-2 my-2 border-edge size-40 rounded-full overflow-hidden p-2">
           <Image
             src={USER.avatar}

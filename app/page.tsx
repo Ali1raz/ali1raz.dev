@@ -3,6 +3,7 @@ import { Separator } from "@/components/general/separator";
 import { Stack } from "@/components/portfolio/stack";
 import { Footer } from "@/components/portfolio/footer";
 import { GitHubContributions } from "@/components/portfolio/gh-contributions";
+import { Projects } from "@/components/portfolio/projects";
 
 export default function Home() {
   return (
@@ -13,6 +14,8 @@ export default function Home() {
       <Stack />
       <GitHubContributions />
       <Separator />
+
+      <Projects />
 
       <section id="about" className="my-[100vh]">
         <div className="bg-blue-700">
