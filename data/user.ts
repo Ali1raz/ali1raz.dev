@@ -1,12 +1,30 @@
+import { GitHub, LinkedIn, XformerlyTwitter } from "@/components/companies";
+
 export const USER = {
   name: "Ali Raza",
   username: "ali1raz",
-  gender: "male",
-  pronouns: "he/him",
   bio: "Creating with code. Small details matter.",
   avatar: "https://avatars.githubusercontent.com/u/129389379?v=4",
-  social_links: {
-    github: "https://github.com/Ali1raz/",
-    x: "https://x.com/ali1razdev",
+  about: {
+    gender: "Male",
+    location: "Karachi, Pakistan",
+    pronouns: "he/him",
   },
+  social_links: [
+    {
+      title: "GitHub",
+      link: "https://github.com/Ali1raz/",
+      icon: GitHub,
+    },
+    {
+      title: "X",
+      link: "https://x.com/ali1razdev",
+      icon: XformerlyTwitter,
+    },
+    {
+      title: "LinkedIn",
+      link: "https://linkedin.com/in/ali1raz",
+      icon: LinkedIn,
+    },
+  ],
 };
