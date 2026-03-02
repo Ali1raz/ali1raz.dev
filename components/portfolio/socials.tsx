@@ -5,9 +5,9 @@ import { ArrowUpRight } from "lucide-react";
 
 export const Socials = () => {
   return (
-    <Panel>
+    <Panel id="contact">
       <PanelHeader className="p-2">
-        <PanelTitle>Social</PanelTitle>
+        <PanelTitle>Contact</PanelTitle>
       </PanelHeader>
       <PanelContent>
         <ul className="grid grid-cols-2 md:grid-cols-3 gap-4">

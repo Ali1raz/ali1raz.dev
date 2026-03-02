@@ -11,7 +11,7 @@ import { Timeline } from "@/components/reui/timeline";
 
 export function Projects() {
   return (
-    <Panel id="projects">
+    <Panel id="projects" className="border-b-0 ">
       <PanelHeader className="p-4">
         <PanelTitle>
           Projects
