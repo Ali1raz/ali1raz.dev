@@ -7,15 +7,15 @@ import { SITE } from "@/data/site";
 import { Panel } from "../general/panel";
 
 const navLinks = [
-  { href: "#", label: "Features" },
-  { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
-  { href: "#", label: "Privacy" },
+  { href: "#tech", label: "Tech Stack" },
+  { href: "#projects", label: "Projects" },
+  // { href: "#", label: "Privacy" },
 ];
 
 const socialLinks = [
   {
-    href: "#",
+    href: "https://x.com/ali1razdev",
     label: "X",
     icon: <XformerlyTwitter className="invert dark:invert-0" />,
   },
@@ -29,11 +29,11 @@ const socialLinks = [
 export function Footer() {
   return (
     <>
-      <Panel className="border-y-amber-500">
+      <div className="border-x border-edge py-4 text-sm">
         <Card className="bg-muted-foreground/15 mx-auto max-w-sm p-1">
           <CardHeader className="text-center p-1">
             <CardDescription className=" flex items-center gap-1">
-              <AlertTriangle className="inline " />
+              <AlertTriangle className="inline" />
               This portfolio was inspired by many open source projects,
               especially{" "}
               <a
@@ -47,7 +47,7 @@ export function Footer() {
             </CardDescription>
           </CardHeader>
         </Card>
-      </Panel>
+      </div>
       <Panel>
         <footer className="mx-auto max-w-5xl *:px-4 *:md:px-6">
           <div className="flex flex-col gap-6 py-6">
