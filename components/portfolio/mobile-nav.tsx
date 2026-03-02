@@ -42,11 +42,11 @@ export function MobileNav() {
                 <Button
                   asChild
                   className="justify-start"
-                  key={link.name}
+                  key={link.label}
                   variant="ghost"
                 >
                   <a href={link.href} onClick={() => setOpen(false)}>
-                    {link.name}
+                    {link.label}
                   </a>
                 </Button>
               ))}
