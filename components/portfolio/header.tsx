@@ -6,12 +6,7 @@ import { Button } from "../ui/button";
 import { ThemeToggle } from "../general/theme-toggle";
 import { MobileNav } from "./mobile-nav";
 import Image from "next/image";
-
-export const navLinks = [
-  { href: "#contact", label: "Contact" },
-  { href: "#tech", label: "Tech Stack" },
-  { href: "#projects", label: "Projects" },
-];
+import { SITE } from "@/data/site";
 
 export function Header() {
   const scrolled = useScroll(10);
@@ -30,7 +25,7 @@ export function Header() {
           <h1 className="text-3xl font-bold">Ali Raza</h1>
         </div>
         <div className="ml-auto hidden items-center gap-2 md:flex">
-          {navLinks.map((link) => (
+          {SITE.navLinks.map((link) => (
             <Button asChild key={link.label} size="sm" variant="ghost">
               <a href={link.href}>{link.label}</a>
             </Button>
