@@ -1,3 +1,4 @@
+import { MyProjectType } from "@/data/projects";
 import {
   TimelineContent,
   TimelineHeader,
@@ -6,15 +7,15 @@ import {
   TimelineSeparator,
   TimelineTitle,
 } from "@/components/reui/timeline";
-import { Badge } from "@/components/ui/badge";
 import {
-  Collapsible, //
+  Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { MyProjectType } from "@/data/projects";
-import { ChevronDown } from "lucide-react";
-import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ChevronDown, ArrowUpRight } from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 interface ProjectItemProps {
   project: MyProjectType;
@@ -22,35 +23,63 @@ interface ProjectItemProps {
 
 export function ProjectItem({ project }: ProjectItemProps) {
   return (
-    <Collapsible>
-      <TimelineItem step={project.key} className="my-4">
-        <TimelineHeader>
-          {/* <TimelineDate></TimelineDate> */}
-          <TimelineTitle className="text-lg font-medium hover:underline underline-offset-4">
-            <CollapsibleTrigger className="w-full flex items-center justify-between">
-              <Link href={project.repo_url}>{project.title}</Link>
-              <ChevronDown className="transition-transform data-[state=open]:rotate-180" />
-            </CollapsibleTrigger>
-          </TimelineTitle>
-        </TimelineHeader>
-        <TimelineIndicator />
-        <TimelineSeparator />
-        <TimelineContent>
-          <CollapsibleContent>
-            <p className="text-sm text-muted-foreground">
-              {project.description}
-            </p>
-          </CollapsibleContent>
+    <TimelineItem className="not-first:border-t border-edge" step={project.key}>
+      <TimelineSeparator />
+      <TimelineIndicator />
 
-          <div className="flex items-center flex-wrap *:hover:bg-accent gap-1 my-2">
-            {project.tech_stack.map((tech) => (
-              <Badge variant="outline" key={tech}>
-                {tech.charAt(0).toUpperCase() + tech.slice(1)}
-              </Badge>
-            ))}
-          </div>
-        </TimelineContent>
-      </TimelineItem>
-    </Collapsible>
+      <Collapsible className="w-full group/collapsible py-1">
+        <Card className="px-1 p-0 bg-background/20 shadow-none rounded border-0">
+          <TimelineHeader>
+            <CardHeader className="p-2 bg-background">
+              <CollapsibleTrigger asChild>
+                <Button
+                  className="flex cursor-pointer rounded px-2 p-0 bg-background! hover:bg-background border-0 shadow-none w-full items-center justify-between"
+                  variant="outline"
+                >
+                  <TimelineTitle className="text-xl">
+                    {project.title}
+                  </TimelineTitle>
+                  <ChevronDown className="size-6 text-foreground transition-transform duration-200 group-data-[state=open]/collapsible:rotate-180" />
+                </Button>
+              </CollapsibleTrigger>
+            </CardHeader>
+          </TimelineHeader>
+
+          <CollapsibleContent>
+            <CardContent className="p-0 px-4 border-0 rounded">
+              <TimelineContent className="space-y-3">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.tech_stack.map((tech) => (
+                    <Badge
+                      key={tech}
+                      variant="outline"
+                      className="hover:border-muted-foreground/30"
+                    >
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+
+                <Button
+                  asChild
+                  size="sm"
+                  variant="outline"
+                  className="w-fit rounded border-edge!"
+                >
+                  <a href={project.repo_url} target="_blank" rel="noreferrer">
+                    Visit
+                    <ArrowUpRight className="size-4" />
+                  </a>
+                </Button>
+              </TimelineContent>
+            </CardContent>
+          </CollapsibleContent>
+        </Card>
+      </Collapsible>
+    </TimelineItem>
   );
 }

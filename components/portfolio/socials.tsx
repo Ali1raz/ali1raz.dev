@@ -12,7 +12,7 @@ export const Socials = () => {
       <PanelContent>
         <ul className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {USER.social_links.map((social) => (
-            <SocialLink key={social.title} {...social} />
+            <SocialLink key={social.link} {...social} />
           ))}
         </ul>
       </PanelContent>
@@ -34,7 +34,7 @@ function SocialLink({
       <li className="flex items-center group justify-between px-2">
         <div className="flex items-center gap-2">
           <Icon className="size-5" />
-          <span>{title}</span>
+          <span className="hover:underline underline-offset-4">{title}</span>
         </div>
         <span>
           <ArrowUpRight className="text-muted-foreground group-hover:text-primary size-4 transition duration-75" />

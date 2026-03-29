@@ -21,7 +21,7 @@ export function Projects() {
         </PanelTitle>
       </PanelHeader>
       <PanelContent>
-        <Timeline defaultValue={MyProjects.length} className="">
+        <Timeline defaultValue={MyProjects.length}>
           {MyProjects.map((project) => (
             <ProjectItem key={project.key} project={project} />
           ))}

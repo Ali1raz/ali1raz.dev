@@ -12,17 +12,17 @@ export const USER = {
   },
   social_links: [
     {
-      title: "GitHub",
+      title: "Ali1raz",
       link: "https://github.com/Ali1raz/",
       icon: GitHub,
     },
     {
-      title: "X",
+      title: "Ali1razdev",
       link: "https://x.com/ali1razdev",
       icon: XformerlyTwitter,
     },
     {
-      title: "LinkedIn",
+      title: "Ali1raz",
       link: "https://linkedin.com/in/ali1raz",
       icon: LinkedIn,
     },
