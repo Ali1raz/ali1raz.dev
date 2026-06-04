@@ -39,7 +39,17 @@ export function ProjectItem({ project }: ProjectItemProps) {
                   <TimelineTitle className="text-xl">
                     {project.title}
                   </TimelineTitle>
-                  <ChevronDown className="size-6 text-foreground transition-transform duration-200 group-data-[state=open]/collapsible:rotate-180" />
+                  <div className="flex gap-2">
+                    <div className="gap-1 hidden sm:flex">
+                      {project.badges?.map((badge) => (
+                        <Badge key={badge} variant="outline">
+                          {badge}
+                        </Badge>
+                      ))}
+                    </div>
+
+                    <ChevronDown className="size-6 text-foreground transition-transform duration-200 group-data-[state=open]/collapsible:rotate-180" />
+                  </div>
                 </Button>
               </CollapsibleTrigger>
             </CardHeader>

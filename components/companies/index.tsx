@@ -143,7 +143,7 @@ export const TanStack = ({ className, ...props }: SVGProps<SVGSVGElement>) => (
     {...props}
     xmlnsXlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 633 633"
-    className={cn("invert-0 dark:invert", className)}
+    className={cn(className)}
   >
     <defs>
       <linearGradient id="tanstack__b" x1="50%" x2="50%" y1="0%" y2="71.65%">
