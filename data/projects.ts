@@ -13,7 +13,10 @@ export const MyProjects: MyProjectType[] = [
     title: "LMS",
     repo_url: "https://lms-ali1raza.vercel.app/",
     description:
-      "A Learning Management System (LMS) built using Next.js, Typescript, tiptap text editor, prisma, Neon, s3 bucket, Better-Auth, Arcjet. Provides a platform for admins to create courses and blogs while users can enroll in courses, access course materials, and read blogs.",
+      "- Built a full-stack LMS using Next.js, TypeScript, Tiptap, and Arcjet providing admins to create courses and blogs while allowing users to enroll, access materials, and read content.\
+      \n - Designed a responsive UI with Shadcn UI and TailwindCSS for seamless user experience across devices.\
+      \n - Built secure authentication and authorization using Better Auth to safeguard user data and ensuring only authorized users can access course materials.\
+      \n - Integrated S3 for easy file storage, allowing users to upload and access course materials.",
     tech_stack: [
       "Next.js",
       "Typescript",
@@ -28,11 +31,14 @@ export const MyProjects: MyProjectType[] = [
   },
   {
     key: 2,
-    title: "CUI portal enhancement",
+    title: "CUI Portal Enhancement",
     repo_url: "https://portal-cui.vercel.app/",
-    badges: ["Developing"],
+    badges: ["Open Source"],
     description:
-      "Enhancing the CUI portal Vehari Campus to allow students to request leave, fee installments and complaints reviewed by HOD and Batch-Advisor. Allowing HOD, accountant and admin to create or schedule announcements. Student admission applications are reviewed by Clerk. Students can request for fee installments which is reviewed by HOD with fine management.",
+      "- Developed a enhanced university portal for COMSATS Vehari Campus using Next.js, TypeScript, enabling students to submit leave requests, fee installment plans, and complaints reviewed by HOD and Batch Advisor.\
+      \n - Implemented role-based dashboards for Admin, HOD, and Batch Advisor, Accountant to manage announcements, and student requests.\
+      \n - Integrated Inngest for efficient background job processing, ensuring timely announcements for students and staff.\
+      \n - Integrated Arcjet for rate limiting and bot detection to keep portal safe from unethical use.",
     tech_stack: [
       "Next.js",
       "Typescript",
@@ -51,10 +57,13 @@ export const MyProjects: MyProjectType[] = [
   {
     key: 3,
     title: "Teamflow",
-    repo_url: "https://github.com/Ali1raz/team-flow/",
+    repo_url: "https://teamflow-ali1raz.vercel.app",
     badges: ["Current", "Open Source"],
     description:
-      "AI-ready team communication platform allowing users to create workspaces, channels with invitations. Allows users to send messages, files, and threads. Users can compose messages using AI and generate threads summary. (More features coming soon)",
+      "- Built a team communication platform using Next.js and TypeScript enabling users to create workspaces, channels, and invite members.\
+      \n - Implemented real-time messaging using Cloudflare Durable Objects with file sharing and threaded replies, keeping conversations organized.\
+      \n - Integrated AI-powered message composition and thread summarization to boost team productivity.\
+      \n - Implemented Arcjet for rate limiting and bot detection to keep platform safe from unethical use.",
     tech_stack: [
       "Next.js",
       "Typescript",
@@ -68,25 +77,7 @@ export const MyProjects: MyProjectType[] = [
       "ORPC",
       "AI sdk",
       "Open router",
-    ],
-  },
-  {
-    key: 4,
-    title: "Crawler",
-    repo_url: "https://github.com/Ali1raz/crawler",
-    badges: ["Open Source", "Developing"],
-    description:
-      "Crawls websites for your AI agent context. Returns markdown perfect for LLM consumption.",
-    tech_stack: [
-      "Tanstack start",
-      "Prisma",
-      "Neon",
-      "Typescript",
-      "Shacn UI",
-      "Firecrawl",
-      "Better-Auth",
-      "AI sdk",
-      "Open router",
+      "Durable objects",
     ],
   },
   {
@@ -95,7 +86,8 @@ export const MyProjects: MyProjectType[] = [
     repo_url: "https://github.com/Ali1raz/split-smart",
     badges: ["Open Source"],
     description:
-      "built in flutter supabase, where you can add your balance, create group with your friends to chat or make expenses, expenses would be divided among group members. see all expenses and mark them complete.",
+      "- Built a cross-platform expense splitting app using Flutter and Supabase enabling users to create groups, chat, and log shared expenses split automatically among members.\
+      \n - Implemented expense tracking dashboard allowing users to view all transactions and mark them as settled.",
     tech_stack: ["Flutter", "Dart", "supabase"],
   },
   {
@@ -105,7 +97,7 @@ export const MyProjects: MyProjectType[] = [
       "https://github.com/Ali1raz/MobileApp-development-/tree/master/github_api",
     badges: ["Open Source"],
     description:
-      "A mobile application built using Flutter that utilizes the GitHub API to display user profiles, repositories, and recent activity. The app allows users to search for GitHub profiles, view their repositories, and see their recent public activity.",
+      "- Built a Flutter mobile app using the GitHub API to search profiles, browse repositories, and view recent public activity.",
     tech_stack: ["Flutter", "Dart", "GitHub API"],
   },
   {
@@ -115,7 +107,7 @@ export const MyProjects: MyProjectType[] = [
     repo_url:
       "https://github.com/Ali1raz/MobileApp-development-/tree/master/flashcards",
     description:
-      "A Mobile Application built using flutter and sqlite, for managing cards organized into decks",
+      "- Built a Mobile Application using Flutter and SQLite for managing flashcards organized into decks.",
     tech_stack: ["flutter", "dart", "sqlite"],
   },
   {
@@ -123,7 +115,7 @@ export const MyProjects: MyProjectType[] = [
     title: "Task Tracker",
     repo_url: "https://github.com/Ali1raz/flutter_dev_full_stack",
     description:
-      "A comprehensive platform where administrators can manage students and their tasks while students can track and complete their assignments .",
+      "- Built a task management platform enabling admins to assign and track student tasks while students monitor and complete their assignments.",
     tech_stack: ["Flutter", "Dart", "Laravel", "MySQL"],
   },
 ];

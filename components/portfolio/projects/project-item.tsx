@@ -1,21 +1,12 @@
-import { MyProjectType } from "@/data/projects";
-import {
-  TimelineContent,
-  TimelineHeader,
-  TimelineIndicator,
-  TimelineItem,
-  TimelineSeparator,
-  TimelineTitle,
-} from "@/components/reui/timeline";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+import { MyProjects, MyProjectType } from "@/data/projects";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ChevronDown, ArrowUpRight } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import {
+  Message,
+  MessageContent,
+  MessageResponse,
+} from "@/components/ai-elements/message";
+import { Separator } from "@/components/ui/separator";
 
 interface ProjectItemProps {
   project: MyProjectType;
@@ -23,73 +14,59 @@ interface ProjectItemProps {
 
 export function ProjectItem({ project }: ProjectItemProps) {
   return (
-    <TimelineItem className="not-first:border-t border-edge" step={project.key}>
-      <TimelineSeparator />
-      <TimelineIndicator />
+    <>
+      <div className="py-1">
+        <Card className="px-1 p-0 bg-background/20  w-full shadow-none rounded border-0">
+          <CardHeader className="px-2 space-y-0.5">
+            <div className="flex rounded w-full sm:items-center sm:justify-between flex-col sm:flex-row gap-2">
+              <h1 className="sm:text-xl text-lg leading-none font-bold">
+                {project.title}
+              </h1>
+              <div className="flex flex-wrap gap-2">
+                {project.badges?.map((badge) => (
+                  <Badge key={badge} variant="outline">
+                    {badge}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+            <a
+              href={project.repo_url}
+              target="_blank"
+              rel="noreferrer"
+              className="hover:underline underline-offset-4 line-clamp-1 text-ellipsis text-sm text-muted-foreground"
+            >
+              {project.repo_url}
+            </a>
+          </CardHeader>
 
-      <Collapsible className="w-full group/collapsible py-1">
-        <Card className="px-1 p-0 bg-background/20 shadow-none rounded border-0">
-          <TimelineHeader>
-            <CardHeader className="p-2 bg-background">
-              <CollapsibleTrigger asChild>
-                <Button
-                  className="flex cursor-pointer rounded px-2 p-0 bg-background! hover:bg-background border-0 shadow-none w-full items-center justify-between"
+          <CardContent className="p-0 px-4 space-y-3 border-0">
+            <Message
+              from="system"
+              className="leading-relaxed text-muted-foreground"
+            >
+              <MessageContent>
+                <MessageResponse>{project.description}</MessageResponse>
+              </MessageContent>
+            </Message>
+
+            <div className="flex flex-wrap gap-2">
+              {project.tech_stack.map((tech) => (
+                <Badge
+                  key={tech}
                   variant="outline"
+                  className="hover:border-muted-foreground/40 capitalize"
                 >
-                  <TimelineTitle className="text-xl">
-                    {project.title}
-                  </TimelineTitle>
-                  <div className="flex gap-2">
-                    <div className="gap-1 hidden sm:flex">
-                      {project.badges?.map((badge) => (
-                        <Badge key={badge} variant="outline">
-                          {badge}
-                        </Badge>
-                      ))}
-                    </div>
-
-                    <ChevronDown className="size-6 text-foreground transition-transform duration-200 group-data-[state=open]/collapsible:rotate-180" />
-                  </div>
-                </Button>
-              </CollapsibleTrigger>
-            </CardHeader>
-          </TimelineHeader>
-
-          <CollapsibleContent>
-            <CardContent className="p-0 px-4 border-0 rounded">
-              <TimelineContent className="space-y-3">
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.tech_stack.map((tech) => (
-                    <Badge
-                      key={tech}
-                      variant="outline"
-                      className="hover:border-muted-foreground/30"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-
-                <Button
-                  asChild
-                  size="sm"
-                  variant="outline"
-                  className="w-fit rounded border-edge!"
-                >
-                  <a href={project.repo_url} target="_blank" rel="noreferrer">
-                    Visit
-                    <ArrowUpRight className="size-4" />
-                  </a>
-                </Button>
-              </TimelineContent>
-            </CardContent>
-          </CollapsibleContent>
+                  {tech}
+                </Badge>
+              ))}
+            </div>
+          </CardContent>
         </Card>
-      </Collapsible>
-    </TimelineItem>
+      </div>
+      {project.key !== MyProjects[MyProjects.length - 1].key && (
+        <Separator className="border-edge my-3" />
+      )}
+    </>
   );
 }
