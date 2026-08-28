@@ -81,6 +81,26 @@ export const MyProjects: MyProjectType[] = [
     ],
   },
   {
+    key: 4,
+    title: "Crawler",
+    repo_url: "https://github.com/Ali1raz/crawler-mern",
+    badges: ["Open Source"],
+    description:
+      "- Built a Crawler using MERN stack and TypeScript enabling users to save articles to read later, research library that lasts.\
+      \n - Implemented Clerk for authentication and authorization.\
+      \n - Implemented Firecrawl to crawl websites and extract structured data.\
+      \n - Implemented Arcjet for rate limiting and bot detection to keep platform safe from unethical use.",
+    tech_stack: [
+      "Next.js",
+      "Typescript",
+      "Shadcn UI",
+      "MongoDB",
+      "Clerk Auth",
+      "Firecrawl",
+      "Express js",
+    ],
+  },
+  {
     key: 5,
     title: "Splitsmart",
     repo_url: "https://github.com/Ali1raz/split-smart",
