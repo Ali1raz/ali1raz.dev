@@ -17,6 +17,8 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { ChevronsUpDownIcon } from "@/components/chevrons-up-down-icon";
 import { ChevronsUpDownIconHandle } from "@/components/chevrons-up-down-icon";
+import { close, open } from "@/lib/sounds";
+import { useSound } from "@litlab/audx/react";
 
 interface ProjectItemProps {
   project: MyProjectType;
@@ -25,6 +27,8 @@ interface ProjectItemProps {
 export function ProjectItem({ project }: ProjectItemProps) {
   const chevronsUpDownIconRef = useRef<ChevronsUpDownIconHandle>(null);
   const [isOpen, setIsOpen] = useState(project.key === 1);
+  const openSound = useSound(open);
+  const closeSound = useSound(close);
 
   useEffect(() => {
     const controls = chevronsUpDownIconRef.current;
@@ -35,12 +39,20 @@ export function ProjectItem({ project }: ProjectItemProps) {
     } else {
       controls.stopAnimation();
     }
-  }, [isOpen]);
+  }, [isOpen, openSound, closeSound]);
 
   return (
     <>
       <div className="py-1">
-        <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-full">
+        <Collapsible
+          open={isOpen}
+          onOpenChange={() => {
+            if (isOpen) closeSound();
+            else openSound();
+            setIsOpen(!isOpen);
+          }}
+          className="w-full"
+        >
           <CollapsibleTrigger asChild>
             <div className="w-full cursor-pointer group">
               <Card className="px-1 p-0 bg-background/20 w-full shadow-none rounded border-0 hover:bg-background/30 transition-colors">

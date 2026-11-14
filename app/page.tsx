@@ -9,7 +9,7 @@ import { About } from "@/components/portfolio/about";
 
 export default function Home() {
   return (
-    <main className="mx-auto md:max-w-3xl *:[[id]]:scroll-mt-22">
+    <main className="mx-auto md:max-w-4xl *:[[id]]:scroll-mt-22">
       <Me />
       <Separator />
 

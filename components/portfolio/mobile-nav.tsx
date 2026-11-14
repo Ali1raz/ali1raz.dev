@@ -6,9 +6,13 @@ import { Button } from "@/components/ui/button";
 import { XIcon, MenuIcon } from "lucide-react";
 import { Portal, PortalBackdrop } from "../ui/portal";
 import { SITE } from "@/data/site";
+import { useSound } from "@litlab/audx/react";
+import { close as closeSound, open as openSound } from "@/lib/sounds";
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false);
+  const oound = useSound(openSound, { volume: 0.5 });
+  const cSound = useSound(closeSound, { volume: 0.5 });
 
   return (
     <div className="md:hidden">
@@ -17,7 +21,11 @@ export function MobileNav() {
         aria-expanded={open}
         aria-label="Toggle menu"
         className="md:hidden"
-        onClick={() => setOpen(!open)}
+        onClick={() => {
+          if (open) cSound();
+          else oound();
+          setOpen(!open);
+        }}
         size="icon"
         variant="outline"
       >

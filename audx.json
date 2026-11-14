@@ -1,0 +1,5 @@
+{
+  "$schema": "https://audx.site/schemas/config.json",
+  "theme": "minimal",
+  "dir": "lib/sounds"
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Providers } from "@/components/providers";
 import { Header } from "@/components/portfolio/header";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { SITE } from "@/data/site";
@@ -31,20 +32,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <TooltipProvider>
-            <Header />
+        <Providers>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <TooltipProvider>
+              <Header />
 
-            <main className="max-w-screen overflow-x-hidden px-2">
-              {children}
-            </main>
-          </TooltipProvider>
-        </ThemeProvider>
+              <main className="max-w-screen overflow-x-hidden px-2">
+                {children}
+              </main>
+            </TooltipProvider>
+          </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

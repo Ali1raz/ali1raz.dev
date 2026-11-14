@@ -7,9 +7,12 @@ import { ThemeToggle } from "../general/theme-toggle";
 import { MobileNav } from "./mobile-nav";
 import Image from "next/image";
 import { SITE } from "@/data/site";
+import { useSound } from "@litlab/audx/react";
+import { click } from "@/lib/sounds";
 
 export function Header() {
   const scrolled = useScroll(10);
+  const clickSound = useSound(click);
 
   return (
     <header
@@ -26,7 +29,13 @@ export function Header() {
         </div>
         <div className="ml-auto hidden items-center gap-2 md:flex">
           {SITE.navLinks.map((link) => (
-            <Button asChild key={link.label} size="sm" variant="ghost">
+            <Button
+              asChild
+              key={link.label}
+              size="sm"
+              variant="ghost"
+              onClick={clickSound}
+            >
               <a href={link.href}>{link.label}</a>
             </Button>
           ))}

@@ -1,9 +1,7 @@
 "use client";
 
-import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -11,9 +9,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useSound } from "@litlab/audx/react";
+import { disable, enable } from "@/lib/sounds";
 
 export function ThemeToggle() {
   const { setTheme } = useTheme();
+  const disableSound = useSound(disable);
+  const enablesound = useSound(enable);
 
   return (
     <DropdownMenu>
@@ -25,13 +27,28 @@ export function ThemeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
+        <DropdownMenuItem
+          onClick={() => {
+            setTheme("light");
+            enablesound();
+          }}
+        >
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
+        <DropdownMenuItem
+          onClick={() => {
+            setTheme("dark");
+            disableSound();
+          }}
+        >
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
+        <DropdownMenuItem
+          onClick={() => {
+            setTheme("system");
+            disableSound();
+          }}
+        >
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
