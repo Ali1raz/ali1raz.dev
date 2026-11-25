@@ -3,7 +3,7 @@ import { GitHub, LinkedIn, XformerlyTwitter } from "@/components/companies";
 export const USER = {
   name: "Ali Raza",
   username: "ali1raz",
-  bio: "Creating with code. Small details matter.",
+  bio: "Creating with code.",
   avatar: "https://avatars.githubusercontent.com/u/129389379?v=4",
   about: {
     gender: "Male",

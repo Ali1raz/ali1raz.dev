@@ -58,9 +58,9 @@ export function ProjectItem({ project }: ProjectItemProps) {
               <Card className="px-1 p-0 bg-background/20 w-full shadow-none rounded border-0 hover:bg-background/30 transition-colors">
                 <CardHeader className="px-2 space-y-0.5">
                   <div className="flex rounded w-full sm:items-center sm:justify-between flex-col sm:flex-row gap-2">
-                    <h1 className="sm:text-2xl text-lg leading-none font-bold">
+                    <h3 className="sm:text-2xl text-lg leading-none font-bold">
                       {project.title}
-                    </h1>
+                    </h3>
                     <div className="flex flex-wrap gap-2">
                       {project.badges?.map((badge) => (
                         <Badge key={badge} variant="outline">

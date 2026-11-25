@@ -1,6 +1,7 @@
 export const SITE = {
   title: "Ali Raza - Portfolio",
-  description: "Creating with code. Small details matter.",
+  site_url: process.env.APP_URL || "http://localhost:3004/",
+  description: "Creating with code.",
   repo_link: "https://github.com/Ali1raz/ali1raz.dev",
   visible_projects: 3,
 
