@@ -6,6 +6,7 @@ import { Providers } from "@/components/providers";
 import { Header } from "@/components/portfolio/header";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { SITE } from "@/data/site";
+import { USER } from "@/data/user";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,6 +21,17 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: SITE.title,
   description: SITE.description,
+  other: {
+    "is-agentic-site-type": "business",
+  },
+  alternates: {
+    canonical: SITE.site_url,
+  },
+  openGraph: {
+    type: "website",
+    url: SITE.site_url,
+    images: [`${USER.avatar}`],
+  },
 };
 
 export default function RootLayout({

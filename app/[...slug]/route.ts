@@ -21,8 +21,11 @@ export async function GET(request: Request) {
   }
 
   const html =
-    "<!DOCTYPE html><html><body><h1>404 - Page Not Found</h1>" +
-    "<p>The page you are looking for does not exist.</p></body></html>";
+    '<!DOCTYPE html><html lang="en"><head><title>404 - Page Not Found</title></head><body>' +
+    "<h1>404 - Page Not Found</h1>" +
+    "<p>The page you are looking for does not exist on Ali Raza's portfolio.</p>" +
+    "<p>Visit the homepage to view projects, tech stack, and contact information.</p>" +
+    "</body></html>";
 
   return new Response(html, {
     status: 404,

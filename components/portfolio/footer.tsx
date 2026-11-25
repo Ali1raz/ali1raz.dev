@@ -24,7 +24,7 @@ export function Footer() {
         <footer className="mx-auto max-w-5xl *:px-4 *:md:px-6">
           <div className="flex flex-col gap-6 py-6">
             <div className="flex items-center justify-between">
-              <h2>Ali Raza</h2>
+              <p className="text-lg font-semibold">Ali Raza</p>
               <div className="flex items-center gap-2">
                 {socialLinks.map(({ href, label, icon }) => (
                   <Button asChild key={label} size="sm" variant="ghost">

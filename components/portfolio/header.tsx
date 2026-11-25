@@ -24,8 +24,7 @@ export function Header() {
       <nav className="max-w-3xl mx-auto py-4 px-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Image src="/r.png" alt="Ali Raza" width={30} height={30} />
-
-          <h1 className="text-3xl font-bold">Ali Raza</h1>
+          <span className="text-3xl font-bold">Ali Raza</span>
         </div>
         <div className="ml-auto hidden items-center gap-2 md:flex">
           {SITE.navLinks.map((link) => (
